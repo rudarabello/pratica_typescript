@@ -1,4 +1,4 @@
-import connection from "../database";
+import connection from "../databases/database";
 
 export async function insert(user:string) {
     connection.query(`
