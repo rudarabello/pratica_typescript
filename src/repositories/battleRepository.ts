@@ -7,7 +7,7 @@ export async function insert(user:string) {
 }
 
 export async function find(user:string) {
-    connection.query(`
+    return connection.query(`
     SELECT * FROM fighters
     WHERE username = $1`,[user])
 }
@@ -36,5 +36,5 @@ export async function updateD(user:string) {
 export async function ranking(){
     return connection.query(`
     SELECT * FROM fighters
-    ORDER BY wins,draws DESC`)
+    ORDER BY wins DESC, draws DESC`)
 }
